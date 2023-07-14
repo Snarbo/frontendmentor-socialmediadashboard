@@ -126,7 +126,7 @@ const GitHubUserSearch = () => {
               </a>
             </div>
             <div className="result-bio mt-6 lg:mt-5">
-              <p className="space-mono-regular text-[15px] leading-[25px]">{user.bio}</p>
+              <p className="space-mono-regular text-[15px] leading-[25px]">{user.bio ? user.bio : 'This profile has no bio.'}</p>
             </div>
             <div className="result-stats flex rounded-[10px] mt-8 pt-[15px] px-8 pb-[17px]">
               <div className="flex-1">
@@ -212,7 +212,7 @@ const GitHubUserSearch = () => {
             </div>
           </div>
           <div className="result-bio mt-[35px]">
-            <p className="text-[13px] leading-[25px]">{user.bio}</p>
+            <p className="text-[13px] leading-[25px]">{user.bio ? user.bio : 'This profile has no bio.'}</p>
           </div>
           <div className="result-stats flex rounded-[10px] mt-[25px] pt-[18px] px-[15px] pb-5 text-center">
             <div className="flex-1">
