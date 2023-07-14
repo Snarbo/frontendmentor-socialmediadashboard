@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 import ProfilePlaceholder from '../../assets/images/profile-placeholder.png';
 import SearchIcon from '../../assets/images/icon-search.svg';
@@ -16,10 +16,7 @@ const GitHubUserSearch = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const API = 'https://api.github.com/users/';
-
-  useEffect(() => {
-    searchHandler();
-  }, []);
+  const searchRef = useRef('');
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,11 +31,17 @@ const GitHubUserSearch = () => {
     };
   }, []);
 
-  const searchInputHandler = (e) => {
-    setSearch(e.target.value);
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearchButton();
+    }
   };
 
-  const searchHandler = () => {
+  const handleSearchButton = () => {
+    setSearch(searchRef.current.value);
+  };
+
+  const searchHandler = useCallback(() => {
     setIsLoading(true);
 
     const fetchItems = async () => {
@@ -61,7 +64,7 @@ const GitHubUserSearch = () => {
       setIsLoading(false);
       setError(error.message);
     });
-  };
+  }, [API, search]);
 
   const getJoinDate = (date) => {
     const dateObj = new Date(date);
@@ -75,12 +78,11 @@ const GitHubUserSearch = () => {
     return convertedString;
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      searchHandler();
-    }
-  };
   const joinDate = getJoinDate(user.created_at);
+
+  useEffect(() => {
+    searchHandler();
+  }, [searchHandler]);
 
   return (
     <div className="devfinder mt-[35px]">
@@ -90,11 +92,11 @@ const GitHubUserSearch = () => {
           className="flex-1 mr-6 text-[13px] md:text-lg md:leading-[25px] bg-transparent outline-none"
           type="text"
           placeholder="Search GitHub username..."
-          onChange={searchInputHandler}
+          ref={searchRef}
           onKeyDown={handleKeyDown}
         />
         {showNoResults && <small className="mr-6 space-mono-bold text-[15px]">No results</small>}
-        <button className="rounded-[10px] space-mono-bold py-3 px-4 md:px-6 text-sm md:text-base text-white transition-all" onClick={searchHandler}>
+        <button className="rounded-[10px] space-mono-bold py-3 px-4 md:px-6 text-sm md:text-base text-white transition-all" onClick={handleSearchButton}>
           Search
         </button>
       </div>
