@@ -145,7 +145,7 @@ const GitHubUserSearch = () => {
                   <a
                     className="space-mono-regular max-w-full text-[15px] leading-[25px] text-ellipsis whitespace-nowrap overflow-hidden hover:underline"
                     title={user.location && user.location !== null ? user.location : 'Not Available'}
-                    href={user.location !== null ? 'http://maps.google.com/?q=' + user.location : '#'}
+                    href={user.location !== null ? 'http://maps.google.com/?q=' + encodeURIComponent(user.location) : '#'}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -230,7 +230,7 @@ const GitHubUserSearch = () => {
               <a
                 className="max-w-full text-[13px] text-ellipsis whitespace-nowrap overflow-hidden hover:underline"
                 title={user.location && user.location !== null ? user.location : 'Not Available'}
-                href={user.location !== null ? 'http://maps.google.com/?q=' + user.location : '#'}
+                href={user.location !== null ? 'http://maps.google.com/?q=' + encodeURIComponent(user.location) : '#'}
                 target="_blank"
                 rel="noreferrer"
               >
