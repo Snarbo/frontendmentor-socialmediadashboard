@@ -48,7 +48,7 @@ body {
 
 /* light */
 #light .header a,
-#light button:hover label {
+#light button:hover span {
   color: var(--color-dark-dark-blue);
 }
 
@@ -56,12 +56,12 @@ body {
   fill: var(--color-dark-dark-blue);
 }
 
-#light .header label {
+#light .header span {
   color: var(--color-gray);
 }
 
 /* dark */
-#dark button:hover label {
+#dark button:hover span {
   color: #90a4d4;
 }
 

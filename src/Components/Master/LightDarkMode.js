@@ -16,7 +16,7 @@ const LightDarkMode = () => {
 
   return (
     <button className="dark-light-toggle flex items-center" onClick={toggleTheme}>
-      <label className="mr-4 space-mono-bold text-[13px] leading-none tracking-[2.5px] uppercase transition-all cursor-pointer">{currentTheme === 'light' ? 'dark' : 'light'}</label>
+      <span className="mr-4 space-mono-bold text-[13px] leading-none tracking-[2.5px] uppercase transition-all cursor-pointer">{currentTheme === 'light' ? 'dark' : 'light'}</span>
       {currentTheme === 'light' && (
         <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
           <path

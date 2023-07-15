@@ -86,16 +86,10 @@ const GitHubUserSearch = () => {
 
   return (
     <div className="devfinder mt-[35px]">
-      <div className="search flex flex-wrap items-center rounded-[15px] p-[7px] pl-4 md:p-2.5 md:pl-8">
-        <img className="mr-[9px] md:mr-6" src={SearchIcon} alt="Search" width="24" height="24" />
-        <input
-          className="flex-1 mr-6 text-[13px] md:text-lg md:leading-[25px] bg-transparent outline-none"
-          type="text"
-          placeholder="Search GitHub username..."
-          ref={searchRef}
-          onKeyDown={handleKeyDown}
-        />
-        {showNoResults && <small className="mr-6 space-mono-bold text-[15px]">No results</small>}
+      <div className="search flex flex-wrap items-center rounded-[15px] p-[7px] pl-4 md:p-2.5 md:pl-8 gap-2.5">
+        <img className="md:mr-3.5" src={SearchIcon} alt="Search" width="24" height="24" />
+        <input className="flex-1 text-[13px] md:text-lg md:leading-[25px] bg-transparent outline-none" type="text" placeholder="Search GitHub username..." ref={searchRef} onKeyDown={handleKeyDown} />
+        {showNoResults && <small className="space-mono-bold text-[13px] md:text-[15px]">No results</small>}
         <button className="rounded-[10px] space-mono-bold py-3 px-4 md:px-6 text-sm md:text-base text-white transition-all" onClick={handleSearchButton}>
           Search
         </button>
@@ -208,7 +202,7 @@ const GitHubUserSearch = () => {
               <a className="text-[13px] lowercase" href={user.html_url && user.html_url !== null ? user.html_url : '#'} target="_blank" rel="noreferrer">
                 @{user.login ? user.login : 'name'}
               </a>
-              <p className="text-[15px]">{user.created_at ? joinDate : ''}</p>
+              <p className="text-[13px]">{user.created_at ? joinDate : ''}</p>
             </div>
           </div>
           <div className="result-bio mt-[35px]">
