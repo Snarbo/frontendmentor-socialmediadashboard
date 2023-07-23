@@ -1,15 +1,20 @@
+import { useStateContext } from './Context/ThemeContext';
+
 import Header from './Components/Master/Header';
-import GitHubUserSearch from './Components/GitHubUserSearch/GitHubUserSearch';
-import { useStateContext } from './store/ThemeContext';
+import Followers from './Components/Followers';
+import Overview from './Components/Overview';
 
 function App() {
   const { currentTheme } = useStateContext();
 
   return (
-    <div id={currentTheme} className="devfinder-container pt-[30px] md:pt-[140px] lg:pt-[145px] pb-20 md:pb-60 lg:pb-[145px] min-h-screen">
+    <div id={currentTheme} className="social-media-container pt-9 pb-[45px] lg:pb-[75px] min-h-screen">
       <div className="container">
         <Header />
-        <GitHubUserSearch />
+        <main className="mt-[40px] lg:mt-[45px]">
+          <Followers />
+          <Overview />
+        </main>
       </div>
     </div>
   );

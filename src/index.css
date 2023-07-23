@@ -1,133 +1,213 @@
 :root {
   --color-white: #fff;
-  --color-off-white: #fefefe;
-  --color-light-gray: #f6f8ff;
-  --color-blue: #0079ff;
-  --color-dark-blue: #1e2a47;
-  --color-dark-dark-blue: #141d2f;
-  --color-muted-blue: #4b6a9b;
-  --color-dark-gray: #2b3442;
-  --color-gray: #697c9a;
-  --color-red: #f74646;
-}
+  --color-off-white: #f1f3fa;
+  --color-dark: #1d1f29;
+  --color-navy: #252b42;
+  --color-off-navy: #8c98c6;
+  --color-navy-hover: #333a55;
+  --color-grey: #aeb3cb;
+  --color-grey-alt: #848bab;
+  --color-dark-grey: #63687d;
+  --color-grey-hover: #e1e4f0;
+  --color-green: #1eb589;
+  --color-red: #dc414c;
 
-@font-face {
-  font-family: 'space-mono-regular';
-  src: url('../src/assets/fonts/SpaceMono-Regular.ttf') format('truetype');
-}
+  --facebook: #178ff5;
+  --twitter: #1da1f2;
+  --instagram-start: #df4896;
+  --instagram-middle: #ee877e;
+  --instagram-end: #fdc366;
+  --youtube: #c4032b;
 
-@font-face {
-  font-family: 'space-mono-bold';
-  src: url('../src/assets/fonts/SpaceMono-Bold.ttf') format('truetype');
+  --toggle-start: #40db82;
+  --toggle-end: #388fe7;
 }
 
 body {
-  margin: 0;
-  font-family: 'space-mono-regular', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.space-mono-bold {
-  font-family: 'space-mono-bold', sans-serif;
-}
-
-.space-mono-regular {
-  font-family: 'space-mono-regular', sans-serif;
+#dark {
+  background-color: var(--color-dark);
 }
 
 #light {
-  background-color: var(--color-light-gray);
-}
-
-#dark {
-  background-color: var(--color-dark-dark-blue);
+  background-color: var(--color-white);
 }
 
 /* HEADER */
 
-/* light */
-#light .header a,
-#light button:hover span {
-  color: var(--color-dark-dark-blue);
-}
-
-#light button:hover svg path {
-  fill: var(--color-dark-dark-blue);
-}
-
-#light .header span {
-  color: var(--color-gray);
-}
-
 /* dark */
-#dark button:hover span {
-  color: #90a4d4;
-}
-
-#dark button:hover svg path {
-  fill: #90a4d4;
-}
-
-/* DEVFINDER */
-.devfinder .search small {
-  color: var(--color-red);
-}
-
-.devfinder .search button {
-  background-color: var(--color-blue);
-}
-
-.devfinder .search button:hover {
-  background-color: #60abff;
-}
-
-.devfinder .result-profile a {
-  color: var(--color-blue);
-}
-
-/* light */
-#light .devfinder .search,
-#light .devfinder .loading,
-#light .devfinder .result {
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
-  background-color: var(--color-off-white);
-}
-
-#light .devfinder .search input {
-  color: var(--color-dark-dark-blue);
-}
-
-#light .devfinder .search input::placeholder,
-#light .definder .result-profile p,
-#light .devfinder .result-bio p,
-#light .devfinder .result-stats h4,
-#light .devfinder .result-additional a,
-#light .devfinder .result-additional p {
-  color: var(--color-muted-blue);
-}
-
-#light .devfinder .result-profile p {
-  color: var(--color-gray);
-}
-
-#light .devfinder .result-stats {
-  background-color: var(--color-light-gray);
-}
-
-/* dark */
-#dark,
-#dark .devfinder .search input,
-#dark .devfinder .search input::placeholder {
+#dark .header h1 {
   color: var(--color-white);
 }
 
-#dark .devfinder .search,
-#dark .devfinder .loading,
-#dark .devfinder .result {
-  background-color: var(--color-dark-blue);
+#dark .header p,
+#dark .header label {
+  color: var(--color-off-navy);
 }
 
-#dark .devfinder .result-stats {
-  background-color: var(--color-dark-dark-blue);
+#dark .header hr {
+  border-color: var(--color-navy-hover);
+}
+
+#dark .header .dark-light-toggle {
+  background: linear-gradient(225deg, var(--toggle-start) 0%, var(--toggle-end) 100%);
+}
+
+#dark .header .dark-light-toggle .toggle {
+  left: 3px;
+  background-color: var(--color-navy);
+}
+
+/* light */
+#light .header h1 {
+  color: var(--color-dark);
+}
+
+#light .header p,
+#light .header label {
+  color: var(--color-dark-grey);
+}
+
+#light .header hr {
+  border-color: var(--color-grey-alt);
+}
+
+#light .header .dark-light-toggle {
+  background-color: var(--color-grey);
+}
+
+#light .header .dark-light-toggle .toggle {
+  right: 3px;
+  background-color: var(--color-off-white);
+}
+
+/* FOLLOWERS & OVERVIEW */
+
+.item small::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-style: solid;
+}
+
+.item small.positive {
+  color: var(--color-green);
+}
+
+.item small.positive::before {
+  border-width: 0 4px 4px 4px;
+  border-color: transparent transparent var(--color-green) transparent;
+}
+
+.item small.negative {
+  color: var(--color-red);
+}
+
+.item small.negative::before {
+  border-width: 4px 4px 0 4px;
+  border-color: var(--color-red) transparent transparent transparent;
+}
+
+/* dark */
+#dark .item.error p,
+#dark .item.loading p {
+  color: var(--color-white);
+}
+
+#dark .item {
+  background-color: var(--color-navy);
+}
+
+#dark .item.link:hover {
+  background-color: var(--color-navy-hover);
+}
+
+#dark .item h2 {
+  color: var(--color-white);
+}
+
+/* light */
+#light .item.error p,
+#light .item.loading p {
+  color: var(--color-dark);
+}
+
+#light .item {
+  background-color: var(--color-off-white);
+}
+
+#light .item.link:hover {
+  background-color: var(--color-grey-hover);
+}
+
+#light .item h2 {
+  color: var(--color-dark);
+}
+
+/* FOLLOWERS */
+
+.follower-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+}
+
+.follower-item.facebook::before {
+  background: var(--facebook);
+}
+
+.follower-item.twitter::before {
+  background: var(--twitter);
+}
+
+.follower-item.instagram::before {
+  background: linear-gradient(90deg, var(--instagram-start) 0%, var(--instagram-middle) 50%, var(--instagram-end) 100%);
+}
+
+.follower-item.youtube::before {
+  background: var(--youtube);
+}
+
+/* dark */
+#dark .follower-item span {
+  color: var(--color-off-navy);
+}
+
+#dark .follower-item p {
+  color: var(--color-off-navy);
+}
+
+/* light */
+#light .follower-item span {
+  color: var(--color-dark-grey);
+}
+
+#light .follower-item p {
+  color: var(--color-dark-grey);
+}
+
+/* OVERVIEW */
+
+/* dark */
+#dark .overview h1 {
+  color: var(--color-white);
+}
+
+#dark .overview-item h3 {
+  color: var(--color-off-navy);
+}
+
+/* light */
+#light .overview h1,
+#light .overview h3 {
+  color: var(--color-dark-grey);
 }

@@ -1,0 +1,19 @@
+{
+  "totalFollowers": 23004,
+  "followers": [
+    { "social": "Facebook", "screenname": "nathanf", "currentFollowers": 1987, "today": 12 },
+    { "social": "Twitter", "screenname": "nathanf", "currentFollowers": 1044, "today": 99 },
+    { "social": "Instagram", "screenname": "realnathanf", "currentFollowers": 11000, "today": 1099 },
+    { "social": "YouTube", "screenname": "Nathan F.", "currentFollowers": 8239, "today": -144 }
+  ],
+  "overview": [
+    { "social": "Facebook", "title": "Page Views", "currentValue": 87, "percentageValue": 3 },
+    { "social": "Facebook", "title": "Likes", "currentValue": 52, "percentageValue": -2 },
+    { "social": "Instagram", "title": "Likes", "currentValue": 5462, "percentageValue": 2257 },
+    { "social": "Instagram", "title": "Profile Views", "currentValue": 52000, "percentageValue": 1375 },
+    { "social": "Twitter", "title": "Retweets", "currentValue": 117, "percentageValue": 303 },
+    { "social": "Twitter", "title": "Likes", "currentValue": 507, "percentageValue": 553 },
+    { "social": "YouTube", "title": "Likes", "currentValue": 107, "percentageValue": -19 },
+    { "social": "YouTube", "title": "Total Views", "currentValue": 1407, "percentageValue": -12 }
+  ]
+}
