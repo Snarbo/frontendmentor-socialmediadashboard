@@ -198,7 +198,7 @@ body {
 /* OVERVIEW */
 
 /* dark */
-#dark .overview h1 {
+#dark .overview h2 {
   color: var(--color-white);
 }
 
@@ -207,7 +207,7 @@ body {
 }
 
 /* light */
-#light .overview h1,
+#light .overview h2,
 #light .overview h3 {
   color: var(--color-dark-grey);
 }

@@ -68,7 +68,7 @@ const Overview = () => {
 
   return (
     <section className="overview mt-[45px]">
-      <h1 className="text-2xl font-bold">Overview - Today</h1>
+      <h2 className="text-2xl font-bold">Overview - Today</h2>
       <div className={`overview-items items grid gap-4 lg:gap-[30px] mt-[25px] ${error || isLoading ? '' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
         {error && (
           <div className="overview-item item rounded-[5px] pt-[30px] px-6 pb-6 text-center error">
