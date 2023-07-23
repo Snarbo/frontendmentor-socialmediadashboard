@@ -88,7 +88,7 @@ const Overview = () => {
             return (
               <a
                 key={id}
-                className={`overview-item item rounded-[5px] pt-[25px] pr-[30px] pb-5 pl-6 transition-all cursor-pointer ${overviewItem.social.toLowerCase()}`}
+                className={`overview-item item rounded-[5px] pt-[25px] pr-[30px] pb-5 pl-6 transition-all cursor-pointer link ${overviewItem.social.toLowerCase()}`}
                 href={url}
                 title={title}
                 target="_blank"
