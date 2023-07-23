@@ -98,8 +98,8 @@ const Overview = () => {
                   <h3 className="text-sm font-bold">{overviewItem.title}</h3>
                   <img src={`./images/icons/${overviewItem.social.toLowerCase()}.svg`} alt="Social Icon" />
                 </div>
-                <div className="flex justify-between items-center mt-5">
-                  <h2 className="text-[32px] font-bold">{overviewItem.currentValue}</h2>
+                <div className="flex justify-between items-end mt-5">
+                  <h2 className="text-[32px] font-bold leading-none">{overviewItem.currentValue}</h2>
                   <small className={`relative pl-3 text-xs font-bold ${overviewItem.status}`}>{overviewItem.percentageValue}%</small>
                 </div>
               </a>
